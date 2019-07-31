@@ -70,6 +70,9 @@ env.Append(LIBS=["libsgppbase.so", "libsgppdatadriven.so", "libsgppcombigrid.so"
 # Setup and build application
 #================================================================================================================================================
 
+# We want to have at least C++11
+env.Append(CXXFLAGS="-std=c++11")
+
 # Include application headers
 env.Append(CPPPATH=[project_include])
 
