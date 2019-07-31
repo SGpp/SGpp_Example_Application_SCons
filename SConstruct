@@ -60,11 +60,16 @@ env.Append(CPPPATH=[project_dependencies_sgpp + "/solver/src"])
 env.Append(CPPPATH=[project_dependencies_sgpp + "/pde/src"])
 env.Append(CPPPATH=[project_dependencies_sgpp + "/misc/src"])
 
-# Add SGpp Module Libraries - if you deactivate one SG++ module
-env.Append(LIBPATH=[project_dependencies_sgpp + "/lib/sgpp"])
-env.Append(LIBS=["libsgppbase.so", "libsgppdatadriven.so", "libsgppcombigrid.so",
-                 "libsgppoptimization.so", "libsgppquadrature.so", "libsgppsolver.so",
-                 "libsgpppde.so", "libsgppmisc.so"])
+# Add SGpp Module Libraries - if you deactivate one SG++ module, you have to remove the respective line as well
+# since the library file won't be there
+env.Append(LIBS=[File(project_dependencies_sgpp + "/lib/sgpp/libsgppbase.so")])
+env.Append(LIBS=[File(project_dependencies_sgpp + "/lib/sgpp/libsgppdatadriven.so")])
+env.Append(LIBS=[File(project_dependencies_sgpp + "/lib/sgpp/libsgppcombigrid.so")])
+env.Append(LIBS=[File(project_dependencies_sgpp + "/lib/sgpp/libsgppoptimization.so")])
+env.Append(LIBS=[File(project_dependencies_sgpp + "/lib/sgpp/libsgppquadrature.so")])
+env.Append(LIBS=[File(project_dependencies_sgpp + "/lib/sgpp/libsgppsolver.so")])
+env.Append(LIBS=[File(project_dependencies_sgpp + "/lib/sgpp/libsgpppde.so")])
+env.Append(LIBS=[File(project_dependencies_sgpp + "/lib/sgpp/libsgppmisc.so")])
 
 #================================================================================================================================================
 # Setup and build application

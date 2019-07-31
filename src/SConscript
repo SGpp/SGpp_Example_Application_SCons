@@ -1,2 +1,2 @@
 Import('env')
-env.Program("quadrature", Glob('*.cpp'))
+env.Program("quadrature", ['example_function.cpp', 'main_quadrature.cpp'])

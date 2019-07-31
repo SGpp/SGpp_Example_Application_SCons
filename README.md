@@ -37,7 +37,7 @@ This command will only build the actual example application. It will not build S
 ## How to modify the SG++ build
 The utilized SG++ version can simply be changed by going to the (checked out) submodule folder external_dependencies/SGpp and changing the commit there as one would in a normal git repository. Afterwards, SG++ needs to be build again with `scons --build-sgpp=True` as shown above.
 
-To change the way SG++ is built, you need to modify the SConstruct file given in this repositoy. Here, you will find a subprocess call which is starting SCons in the SG++ submodule directory. By modifying this SCons command you can change the way SG++ is built. For example you could deactivate the datadriven module by changing the flag SG_DATADRIVEN=0 and by further removing the library libsgppdatadriven.so from the lib list.
+To change the way SG++ is built, you need to modify the SConstruct file given in this repositoy. Here, you will find a subprocess call which is starting SCons in the SG++ submodule directory. By modifying this SCons command you can change the way SG++ is built. For example you could deactivate the datadriven module by changing the flag SG_DATADRIVEN=0 and by further removing the library libsgppdatadriven.so from the LIBS list.
 
 There are plenty of other things to change about the SG++ build, for example you may want to activate the python wrappers.
 To see all ways to configure SCons for SG++, go to the (checked out) submodule directory and run
