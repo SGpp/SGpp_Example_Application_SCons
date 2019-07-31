@@ -1,0 +1,23 @@
+branches:
+  only:
+  - master
+
+language: cpp
+
+dist: xenial
+
+addons:
+  apt:
+    update: true
+
+matrix:
+  include:
+  - name: "sgpp-example-application-scons-build"
+    addons:
+      apt:
+        packages:
+        - scons
+    script:
+    - git submodule update --init external_dependencies/SGpp
+    - scons --build-sgpp=True
+    - scons
