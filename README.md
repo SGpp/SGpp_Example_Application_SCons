@@ -26,11 +26,11 @@ The submodule is not checked out during a normal git clone. Thus, we do it this 
 
 This command will both configure the project as well as build SG++. As this compiles SG++ from scratch, this will take time! The unit tests, however, are switched off to save time. In this example, we build all modules of SG++ in order to demonstrate how to include the headers and link the libraries of all SG++ modules with your own application. Thus, you can reduce the compile time further by deactivating modules (see section below) that you do not need for your own project.
 
+After this is done, you can call the application within the build directory with `./build/quadrature`
 ### 3. Variant b) Run scons to only build the application
-`scons 
+`scons`
 
 This command will only build the actual example application. It will not build SG++ again in order to save compilation time.
-After this is done, you can call the application within the build directory with `./build/quadrature`
 
 ## How to modify the SG++ build
 
