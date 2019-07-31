@@ -23,13 +23,13 @@ To build this application, you need to fullfill all [required dependencies](http
 
 The submodule is not checked out during a normal git clone. Thus, we do it this way.
 
-### 3. Variant 1: Run SCons building both the application and the SG++ submodule
+### 3. Variant 1: Build both the application and the SG++ submodule
 `scons --build-sgpp=True`
 
 This command will both build the project as well as SG++. As this compiles SG++ from scratch, this will take time! The SG++ unit tests, however, are switched off to save time. In this example, we build all modules of SG++ in order to demonstrate how to include the headers and link the libraries of all SG++ modules with your own application. Thus, you can reduce the compile time further by deactivating modules (see section below) that you do not need for your own project.
 
 After the command is done, you can call the application within the build directory with `./build/quadrature`
-### 3. Variant 2: Run SCons to only build the application
+### 3. Variant 2: Only build the application
 `scons`
 
 This command will only build the actual example application. It will not build SG++ again in order to save compilation time.
