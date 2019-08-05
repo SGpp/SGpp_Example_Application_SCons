@@ -21,3 +21,4 @@ matrix:
     - git submodule update --init external_dependencies/SGpp
     - scons --build-sgpp=True
     - scons
+    - ./build/quadrature
